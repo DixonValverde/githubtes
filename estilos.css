@@ -1,0 +1,287 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f3f3;
+    background-image: linear-gradient(45deg, #ffefef 25%, #ffe6f2 25%, #ffe6f2 50%, #ffefef 50%, #ffefef 75%, #ffe6f2 75%, #ffe6f2 100%);
+    background-size: 60px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    perspective: 1000px;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-height: 500px;
+    max-height: 80vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.8s, opacity 0.8s;
+    transform-style: preserve-3d;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ff6b95 #fff4f7;
+}
+
+.card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card::-webkit-scrollbar-track {
+    background: #fff4f7;
+    border-radius: 10px;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background: #ff6b95;
+    border-radius: 10px;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+    background: #ff4d7e;
+}
+
+.card-inner {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 192, 203, 0.3) 0%, rgba(255, 230, 240, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Estilos para las imágenes */
+.card-inner img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para títulos y textos */
+h1 {
+    color: #ff6b95;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff6b95;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #ff6b95;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+    white-space: pre-wrap;
+}
+
+/* Estilos para botones */
+.btn-next, .btn-prev, .btn-restart {
+    background-color: #ff6b95;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 107, 149, 0.3);
+    margin: 5px;
+    text-decoration: none;
+}
+
+.btn-next:hover, .btn-prev:hover, .btn-restart:hover {
+    background-color: #ff4d7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 149, 0.4);
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: sticky;
+    bottom: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+/* Animación del corazón */
+.heart-animation, .final-heart {
+    margin: 30px 0;
+}
+
+.heart {
+    background-color: #ff6b95;
+    display: inline-block;
+    height: 80px;
+    position: relative;
+    transform: rotate(-45deg);
+    width: 80px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: #ff6b95;
+    border-radius: 50%;
+    height: 80px;
+    position: absolute;
+    width: 80px;
+}
+
+.heart:before {
+    top: -40px;
+    left: 0;
+}
+
+.heart:after {
+    left: 40px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0% { transform: rotate(-45deg) scale(0.8); }
+    5% { transform: rotate(-45deg) scale(0.9); }
+    10% { transform: rotate(-45deg) scale(0.8); }
+    15% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(0.8); }
+    100% { transform: rotate(-45deg) scale(0.8); }
+}
+
+/* Estilos para las preguntas del test */
+.question {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.options label {
+    margin: 10px 0;
+    padding: 12px 20px;
+    background-color: #fff4f7;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.options label:hover {
+    background-color: #ffe6ec;
+    border-color: #ffc0cb;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Visibilidad de las tarjetas */
+.hidden {
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-inner {
+        padding: 30px 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .message {
+        font-size: 1rem;
+    }
+    
+    .heart {
+        height: 60px;
+        width: 60px;
+    }
+    
+    .heart:before,
+    .heart:after {
+        height: 60px;
+        width: 60px;
+    }
+    
+    .heart:before {
+        top: -30px;
+    }
+    
+    .heart:after {
+        left: 30px;
+    }
+}

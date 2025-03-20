@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario, Mi Amor ❤️</title>
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Incluir SweetAlert2 desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Portada inicial -->
+        <div class="card" id="portada">
+            <div class="card-inner">
+                <h1>Feliz Aniversario ❤️</h1>
+                <img src="snoopy.jpg" alt="Snoopy">
+                <div class="heart-animation">
+                    <div class="heart"></div>
+                </div>
+                <p class="message">Te amo con todo mi corazón, mi vida...</p>
+                <button class="btn-next" onclick="nextCard()">Comenzar</button>
+            </div>
+        </div>
+
+        <!-- Carta 1 -->
+        <div class="card hidden" id="carta1">
+            <div class="card-inner">
+                <h2>Carta 1</h2>
+                <img src="dino1.jpg" alt="Dino 1">
+                <p class="message">Está es mi primera carta colashon ay mi amorshito empezaré por el inicio se que eh dicho que desde
+                    que llegaste a mi vida colashon iluminaste mi vida   colashon muaaaaaaaaaak tiiii pote me encontraste fatal cuando
+                     nisiquiera quería amor nada de eso ,pero llegaste tuuuuuu Ami vida a iluminarlaaaaaaaaaaaa  tuuuuuuu solo
+                      tuuuuuuuuuuuu como dice la música de merardo y sus playersss muaaaaak :'3333 colashon  mi vida para mí fuiste un angel mandado del cielo  desde esa 
+                   solicitud y me hablaste ninguno de los 2 sabiamos que íbamos a ser esposos el día de hoy  muaaaaaaak</p>
+                <div class="navigation">
+                    <button class="btn-prev" onclick="prevCard()">Anterior</button>
+                    <button class="btn-next" onclick="nextCard()">Siguiente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta 2 -->
+        <div class="card hidden" id="carta2">
+            <div class="card-inner">
+                <h2>Carta 2</h2>
+                <img src="dino2.jpg" alt="Dino 2">
+                <p class="message">Está es la segunda carta mi amorshito bello lo que quiero decirte que no pienses que algún día se va a acabar mi amor ti veo eso mucho :c 
+                    amorshito que piensas piensas que te dejaré de amar piensas porque no estamos todos los días juntos amor piensas que no estaré contigo:c  cuando es lo contrario para mí eres mi vida entera :c eres la niña tiquita de mi colashon te amo realmente como no tienes idea!!  
+                    Mi amor :c eres mi pequeña luz en mi vida y la que no quiero perder porque realmente te amo demasiado y también estoy Acostumbrado
+                     a ti eres un pedazo de mi vida aunque no lo creas eres ese pedacito que por cual me levanto todo los días bien ;:33</p>
+                <div class="navigation">
+                    <button class="btn-prev" onclick="prevCard()">Anterior</button>
+                    <button class="btn-next" onclick="nextCard()">Siguiente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta 3 -->
+        <div class="card hidden" id="carta3">
+            <div class="card-inner">
+                <h2>Carta 3</h2>
+                <img src="dino3.png" alt="Dino 3">
+                <p class="message">Está es mi tercera parte de las cartitas amorshito te quiero decir de corazón que eres la mujer que
+                     me inspira a seguir aún con lo que estoy colashon! Porque la verdad quiero tener una familia contigo  una
+                      familia como tú dice de 1 hijo mi amor para cuidarlo ,amarlo y enseñarle cosas a nuestro bb mi amor 
+                       prefiero que sea mini tu porque asi tendré a 2 romishitas muaaak amorshito sea niño o niña bonita  muaaaak
+                        :333 muaaaak  mi niña tiquitaaaaaa telo tener una casa y vivir contigo!!!! Amorshitoooo bellooooo :'333 muaaaaaak muaaaak   :((( una familia contigo porque la verdad aparte de ser una mujer maravillosa 
+                        también sabrías como comportarte como una esposa de bien para 
+                    mi porque se que cualquier cosa que esté mal yo me lo vas a decir eso me gusta mucho de ti mi amor</p>
+                <div class="navigation">
+                    <button class="btn-prev" onclick="prevCard()">Anterior</button>
+                    <button class="btn-next" onclick="startTest()">Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor para el test -->
+        <div class="card hidden" id="test-container">
+            <div class="card-inner" id="test-content">
+                <!-- El test se generará aquí con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
